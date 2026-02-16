@@ -1,0 +1,8 @@
+network(xhr)
+header
+    url
+    methode
+payload
+    data sent by frontend
+preview
+    data sent by backend
