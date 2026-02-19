@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import CreateProduct from "./product/CreateProduct";
-import ProductDetails from "./product/ProductDetail";
+
 import UpdateProduct from "./product/UpdateProduct";
 import ReadAllProduct from "./product/ReadAllProduct";
 import CreateUser from "./user/CreateUser";
@@ -11,6 +11,7 @@ import CreateReview from "./review/CreateReview";
 import ReadAllReview from "./review/ReadAllReview";
 import ReviewDetails from "./review/ReviewDetails";
 import UpdateReview from "./review/UpdateReview";
+import ProductDetails from "./product/ProductDetails";
 
   const DwRoute=()=>{
     return (
@@ -23,7 +24,7 @@ import UpdateReview from "./review/UpdateReview";
           element={<CreateProduct></CreateProduct>}> 
           </Route>
           <Route 
-          path="id"
+          path=":id"
           element={<ProductDetails></ProductDetails>}> 
           </Route>
           <Route 
@@ -69,7 +70,7 @@ import UpdateReview from "./review/UpdateReview";
   change component based on url
   localhost:3000/user/create=>CreateUser
   localhost:3000/user=>ReadAllUser
-  localhost:3000/user/:id=>UserDetail
+  localhost:3000/user/:id=>UserDetails
   localhost:3000/user/update/:id=>UpdateUser
   crud
   */

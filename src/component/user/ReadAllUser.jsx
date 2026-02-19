@@ -1,7 +1,8 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
-const ReadAllUser = () => {
-  let users = [
+ const ReadAllUser = () => {
+ /* let users = [
     {
       name: "namdul",
       email: "abcd@gmail.com",
@@ -17,7 +18,23 @@ const ReadAllUser = () => {
       email: "hari@gmail.com",
       profileImage: "aaaa",
     },
-  ];
+  ]; */
+  let [users, setUsers] = useState([]);
+  /* 
+  hit api on payload
+  api give data
+  set data to user */
+  const getData = async () => {
+    let result = await axios({
+      url: "http://localhost:8000/user",
+      method: "get",
+    });
+    setUsers(result.data.result);
+
+  }
+  useEffect(() => {
+      getData();
+  },[]);
   return (
     <div>
       {users.map((item, i) => {
